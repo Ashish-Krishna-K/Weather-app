@@ -25,12 +25,14 @@ function renderData() {
 function displayCelcius(node, sibling) {
   node.classList.toggle('selected');
   sibling.classList.toggle('selected');
+  sibling.classList.add('dim');
   displayTemp.childNodes[0].textContent = weatherData.tempInC;
   displayFeelsLike.childNodes[0].textContent = `Feels like ${weatherData.feelsLikeInC}`;
 }
 function displayFarenheit(node, sibling) {
   node.classList.toggle('selected');
   sibling.classList.toggle('selected');
+  sibling.classList.add('dim');
   displayTemp.childNodes[0].textContent = weatherData.tempInF;
   displayFeelsLike.childNodes[0].textContent = `Feels like ${weatherData.feelsLikeInF}`;
 }
