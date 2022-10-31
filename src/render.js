@@ -39,7 +39,7 @@ function displayFarenheit(node, sibling) {
 
 function renderError(msg) {
   displayError.textContent = msg;
-  display.classList.toggle('hidden');
+  body.removeAttribute('class');
   body.classList.add('clear');
 }
 
