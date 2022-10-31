@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { weatherData } from './logic';
 
+const body = document.querySelector('body');
 const display = document.querySelector('#display-weather');
 const displayPlace = document.querySelector('#place');
 const displayTemp = document.querySelector('#temp');
@@ -12,11 +13,12 @@ const displayError = document.querySelector('#error');
 
 function renderData() {
   displayError.textContent = '';
+  display.classList.remove('hidden');
   displayPlace.textContent = `${weatherData.location}, ${weatherData.country}`;
-  displayTemp.childNodes[0].textContent = weatherData.tempInC;
+  displayTemp.textContent = weatherData.tempInC;
   displayFeelsLike.childNodes[0].textContent = `Feels like ${weatherData.feelsLikeInC}`;
-  displayWeather.childNodes[0].textContent = `${weatherData.weatherMain}, ${weatherData.weatherInfo}`;
-  displayPressure.textContent = `Pressure: ${weatherData.pressure}hPa`;
+  displayWeather.textContent = `${weatherData.weatherMain}, ${weatherData.weatherInfo}`;
+  displayPressure.textContent = `Pressure: ${weatherData.pressure} hPa`;
   displayHumidity.textContent = `Humidity: ${weatherData.humidity}%`;
 }
 
@@ -36,8 +38,51 @@ function displayFarenheit(node, sibling) {
 function renderError(msg) {
   displayError.textContent = msg;
   display.classList.toggle('hidden');
+  body.classList.add('clear');
+}
+
+function renderBackground() {
+  if (weatherData.weatherCode > 199 && weatherData.weatherCode < 300) {
+    // thunder
+    body.removeAttribute('class');
+    body.classList.add('thunderstorm');
+    return;
+  }
+  if (weatherData.weatherCode > 299 && weatherData.weatherCode < 600) {
+    // rain
+    body.removeAttribute('class');
+    body.classList.add('rain');
+    return;
+  }
+  if (weatherData.weatherCode > 599 && weatherData.weatherCode < 700) {
+    // snow
+    body.removeAttribute('class');
+    body.classList.add('snow');
+    return;
+  }
+  if (weatherData.weatherCode > 700 && weatherData.weatherCode < 800) {
+    // atmosphere
+    body.removeAttribute('class');
+    body.classList.add('atmo');
+    return;
+  }
+  if (weatherData.weatherCode === 801 || weatherData.weatherCode === 802) {
+    // low clouds
+    body.removeAttribute('class');
+    body.classList.add('few-clouds');
+    return;
+  }
+  if (weatherData.weatherCode === 803 || weatherData.weatherCode === 804) {
+    // more clouds
+    body.removeAttribute('class');
+    body.classList.add('dark-clouds');
+    return;
+  }
+  // clear
+  body.removeAttribute('class');
+  body.classList.add('clear');
 }
 
 export {
-  renderData, renderError, displayCelcius, displayFarenheit,
+  renderData, renderError, renderBackground, displayCelcius, displayFarenheit,
 };

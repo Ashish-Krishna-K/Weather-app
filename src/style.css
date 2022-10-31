@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +8,9 @@
 html, body {
     width: 100%;
     height: 100%;
+    
+    font-family: 'Staatliches', cursive;
+    color: bisque;
 }
 
 main {
@@ -13,48 +18,70 @@ main {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
+form {
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    gap: 4px;
+    font-size: 1rem;
+    padding-top: 2rem;
+    padding-right: 1rem;
+}
+
+form>input {
+    height: 1rem;
+    width: 200px;
+    background-color: beige;
+    border: none;
+    border-radius: 100px;
+    padding-left: 8px;
+    font-weight: bold;
+}
+
+form>button {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url(./images/search.svg);
+    background-size: cover;
+    border: none;
+    border-radius: 100px;
+}
+
+button:hover {
+    box-shadow: 0 0 5px 3px beige;
+}
+
 #display-weather {
-    
-    border: 1px solid black;
+    flex: 1;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 
-    background-color: beige;
-}
+    padding: 36px;
 
-form {
-    border: 1px solid black;
-    
-    align-self: flex-end;
-
-    font-size: 2rem;
 }
 
 #place {
     font-size: 2rem;
-    padding: 12px 24px;
 }
 
 #temp-parent {
-    font-size: 5rem;
-    padding: 12px 24px;
+    font-size: 4rem;
 }
 
-#feels-like {
+#feels-like-parent {
     font-size: 2rem;
-    padding: 12px 24px;
 }
 
 #weather-parent{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 12px 24px;
+    gap: 24px;
 }
 
 #weather {
@@ -63,19 +90,67 @@ form {
 }
 
 #pressure {
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 #humidity {
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
+footer {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dim {
+    opacity: 0.5;
+}
+
+#celcius:hover,
+#farenheit:hover {
+    border-radius: 100px;
+    font-weight: bolder;
+    opacity: 1;
+}
 
 .selected {
-    color: red;
+    color: greenyellow;
     font-weight: bolder;
+    text-shadow: 0 0 1rem beige;
+    opacity: 1;
 }
 
 .hidden {
     visibility: hidden;
+}
+
+.thunderstorm {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/thunder.webp);
+    background-size: cover;
+}
+.rain{
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/rain.webp);
+    background-size: cover;
+}
+.snow {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/snow.webp);
+    background-size: cover;
+}
+.atmo {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/fog.webp);
+    background-size: cover;
+}
+.few-clouds {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/few-clouds.webp);
+    background-size: cover;
+}
+.dark-clouds {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/dark-clouds.webp);
+    background-size: cover;
+}
+.clear {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/clear-sky.webp);
+    background-size: cover;
 }

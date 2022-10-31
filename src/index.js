@@ -11,6 +11,7 @@ const farenheitBtn = document.querySelector('#farenheit');
 getWeatherBtn.addEventListener('click', () => {
   const location = searchInput.value.toString();
   processData(getData(location));
+  farenheitBtn.removeAttribute('class');
 });
 
 celciusBtn.addEventListener('click', (e) => {

@@ -1,4 +1,5 @@
-import { renderData, renderError } from './render';
+// eslint-disable-next-line import/no-cycle
+import { renderData, renderError, renderBackground } from './render';
 
 const weatherData = {
   location: null,
@@ -9,6 +10,7 @@ const weatherData = {
   feelsLikeInF: null,
   humidity: null,
   pressure: null,
+  weatherCode: null,
   weatherMain: null,
   weatherInfo: null,
 };
@@ -33,10 +35,10 @@ async function getData(location) {
       renderError(receivedData.message);
       return;
     }
-    console.log(receivedData);
     // eslint-disable-next-line consistent-return
     return receivedData;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 }
@@ -51,10 +53,12 @@ function processData(dataObj) {
     weatherData.feelsLikeInF = convertKtoF(response.main.feels_like);
     weatherData.humidity = response.main.humidity;
     weatherData.pressure = response.main.pressure;
+    weatherData.weatherCode = response.weather[0].id;
     weatherData.weatherMain = response.weather[0].main;
     weatherData.weatherInfo = response.weather[0].description;
 
     renderData();
+    renderBackground();
   });
 }
 
