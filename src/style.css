@@ -115,6 +115,11 @@ footer {
     opacity: 1;
 }
 
+#error {
+    font-size: 3rem;
+    color: red;
+}
+
 .selected {
     color: greenyellow;
     font-weight: bolder;
