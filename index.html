@@ -7,39 +7,38 @@
     <title>Weather App</title>
     <script src="./main.js" defer></script>
 </head>
-<body>
+<body class="clear">
     <main id="whole-page">
-
         <form action="#" id="form">
             <label for="search">Search Location: </label>
             <input type="search" id="search">
-            <button type="button" id="get-weather">Show Weather</button>
+            <button type="button" id="get-weather"></button>
         </form>
         <div id="error"></div>
-        <div id="display-weather">
+        <div id="display-weather" class="hidden">
             <div id="place">
-                place
             </div>
             <div id="temp-parent">
-                <span id="temp">45</span>
-                <span id="celcius" class="selected">&deg;C</span>
+                <span id="temp"></span>
+                <span id="celcius" class="selected dim">&deg;C</span>
                 /
-                <span id="farenheit">&deg;F</span>
+                <span id="farenheit" class="dim">&deg;F</span>
             </div>
-            <div id="feels-like">
-                feels like: 45 <span>&deg;</span>
+            <div id="feels-like-parent">
+                <span id="feels-like">feels like:</span><span>&deg;</span>
             </div>
             <div id="weather-parent">
-                <span id="weather">weather</span>
+                <span id="weather"></span>
                 <span id="pressure">
-                    pressure
                 </span>
                 <span id="humidity">
-                    humidity
                 </span>
             </div>
         </div>
+        <footer>
+            <span>Weather data provided by OpenWeather</span>
+            <span>© 2012 — 2022 OpenWeather ® All rights reserved</span>
+        </footer>
     </main>
-
 </body>
 </html>
