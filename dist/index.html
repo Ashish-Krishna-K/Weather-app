@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <main id="whole-page">
+
+        <form action="#" id="form">
+            <label for="search">Search Location: </label>
+            <input type="search" id="search">
+            <button type="button" id="get-weather">Show Weather</button>
+        </form>
+        <div id="error"></div>
+        <div id="display-weather">
+            <div id="place">
+                place
+            </div>
+            <div id="temp-parent">
+                <span id="temp">45</span>
+                <span id="celcius" class="selected">&deg;C</span>
+                /
+                <span id="farenheit">&deg;F</span>
+            </div>
+            <div id="feels-like">
+                feels like: 45 <span>&deg;</span>
+            </div>
+            <div id="weather-parent">
+                <span id="weather">weather</span>
+                <span id="pressure">
+                    pressure
+                </span>
+                <span id="humidity">
+                    humidity
+                </span>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
