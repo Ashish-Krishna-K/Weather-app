@@ -25,7 +25,7 @@ function convertKtoF(data) {
 
 async function getData(location) {
   try {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=8af61ed18fdcc5f12acad023a85e6874`, {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=8af61ed18fdcc5f12acad023a85e6874`, {
       method: 'GET',
       mode: 'cors',
     });
