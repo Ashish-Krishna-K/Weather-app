@@ -1,8 +1,3 @@
-import {
-  WeatherData,
-  APIResponse,
-  EventHandlerType,
-} from "../types/generalTypes";
 import EventsObserver from "./eventsController";
 
 // A factory to create the data object containing only the data required from the

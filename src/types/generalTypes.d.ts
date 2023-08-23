@@ -1,9 +1,9 @@
-export interface APIResponse {
+interface APIResponse {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;
 }
 
-export interface WeatherData {
+interface WeatherData {
   locationName: string;
   locationDescription: string;
   dayTime: number;
@@ -19,35 +19,35 @@ export interface WeatherData {
   uvIndex: number;
 }
 
-export interface EventsObserverType {
+interface EventsObserverType {
   events: EventsType;
   subscribe: (eventName: string, eventHandler: EventHandlerType) => void;
   publish: (eventName: string, data: EventPayloadType) => void;
 }
 
-export interface LocationString {
+interface LocationString {
   searchTerm: string;
 }
 
-export interface EventsType {
+interface EventsType {
   [key: string]: EventHandlerType[];
 }
 
-export interface ErrorType {
+interface ErrorType {
   message: string;
 }
 
-export interface ImageURLResultType {
+interface ImageURLResultType {
   imgUrl: string;
   takenByName: string;
   takenByUrl: string;
 }
 
-export type EventPayloadType =
+type EventPayloadType =
   | LocationString
   | WeatherData
   | ImageURLResultType
   | ErrorType
   | null;
 
-export type EventHandlerType = <T extends EventPayloadType>(data: T) => void;
+type EventHandlerType = <T extends EventPayloadType>(data: T) => void;

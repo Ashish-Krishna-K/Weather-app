@@ -1,4 +1,3 @@
-import { EventHandlerType, WeatherData } from "../types/generalTypes";
 import EventsObserver from "./eventsController";
 
 // a display component which displays all the fetched weather data

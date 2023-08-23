@@ -1,9 +1,3 @@
-import {
-  EventHandlerType,
-  EventPayloadType,
-  EventsObserverType,
-} from "../types/generalTypes";
-
 const EventsObserver: EventsObserverType = {
   events: {},
   subscribe: (eventName: string, eventHandler: EventHandlerType) => {
