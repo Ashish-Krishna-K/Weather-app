@@ -37,7 +37,7 @@ const generateDataObject = (data: APIResponse): WeatherData => {
 // asynchronously fetch the weatherData from the weather api.
 const fetchWeatherData = async (location: string) => {
   const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=a095999d7d0840f98e5142344232108&q=${location}`,
+    `https://api.weatherapi.com/v1/current.json?key=a095999d7d0840f98e5142344232108&q=${location}`,
   );
   const fetchedData = await response.json();
   // since fetch doesn't throw an error even if the response status is not 200,
